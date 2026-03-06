@@ -32,6 +32,23 @@ quant_project/
     ├── strategy_weights.csv
     └── factor_loadings.csv
 ```
+## PROJECT structure - MODULE-BY-MODULE GUIDE
+
+### Module 1: Data Generator (`data_generator.py`)
+
+**Question:** How do we generate realistic synthetic financial data that exhibits the stylized facts observed in real markets?
+
+**Theory:** Real asset returns exhibit four key properties:
+- **Fat tails** (leptokurtosis) — extreme returns occur more frequently than a normal distribution predicts
+- **Volatility clustering** — large returns tend to be followed by large returns (GARCH effect)
+- **Cross-asset correlations** — driven by common factors
+- **Regime dependence** — markets alternate between bull, bear, and crisis states
+
+**Implementation:**
+- Multi-factor return model: `r_i = alpha_i + beta_i * F + epsilon_i`
+- GARCH(1,1) conditional variance for volatility clustering
+- Two-state Markov chain for regime switching
+- 12-asset universe spanning Tech, Financials, Healthcare, Energy, Real Estate, Commodities, Fixed Income
 ---
 
 ## HOW TO RUN
