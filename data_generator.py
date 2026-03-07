@@ -2,26 +2,21 @@
 ================================================================================
 MODULE 1: Synthetic Financial Data Generator
 ================================================================================
+
 PURPOSE:
     Generate realistic multi-asset financial time series with embedded factor
     structure, regime shifts, fat tails, and volatility clustering — properties
     observed in real financial markets.
 
-THEORY:
-    Real asset returns exhibit:
-    1. Fat tails (leptokurtosis) — modeled via Student-t innovations
-    2. Volatility clustering — modeled via GARCH(1,1) dynamics
-    3. Cross-asset correlations — modeled via a factor structure
-    4. Regime dependence — modeled via Hidden Markov switching
-
-    We use a factor model:  r_i = alpha_i + beta_i * F + epsilon_i
-    where F is a vector of common factors and epsilon_i is idiosyncratic noise.
-
-INTERVIEW RELEVANCE:
-    - Demonstrates understanding of stylized facts of asset returns
-    - Shows ability to build simulation engines for strategy testing
-    - Factor models are foundational to quant research (APT, Fama-French)
-================================================================================
+Approach: 
+    Real asset returns exhibit ( the known properties):
+    - Fat tails (leptokurtosis) — modeled via Student-t innovations
+    - Volatility clustering — modeled via GARCH(1,1) dynamics
+    - Cross-asset correlations — modeled via a factor structure
+    - Regime dependence — modeled via Hidden Markov switching
+    
+so to generate realistic synthetic data I created a class/module which ensures that the data we generate 
+contains the above stated 4 known properties which are exibited by real financial data  
 """
 
 import numpy as np
@@ -37,13 +32,15 @@ class MarketDataGenerator:
     The generator creates correlated asset returns driven by:
     - A common market factor (systematic risk)
     - A value factor (HML-like)
-    - A momentum factor
+    - A momentum factor  (an alpha factor) 
     - Idiosyncratic noise per asset
 
     Volatility follows a simplified GARCH(1,1) process to capture clustering.
     """
 
     # ── Asset Universe Definition ──────────────────────────────────────
+    " 12-asset universe spanning Tech, Financials, Healthcare, Energy, Real Estate, Commodities, Fixed Income "
+
     ASSET_UNIVERSE = {
         # Ticker: (Name, Sector, Annual Return, Annual Vol, Market Beta)
         'AAPL':  ('Apple Inc.',          'Technology',     0.15, 0.28, 1.20),
@@ -169,8 +166,10 @@ class MarketDataGenerator:
 
         return factors
 
-    def generate_asset_returns(
-        self, n_days: int = 2520
+    def generate_asset_returns( 
+        #step is crucial , prices are not stationary but returns are , when data is stationary we can model it statistically.
+        
+        self, n_days: int = 2520     #1 year = 252 trading days , so 2520 days = 10 years
     ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         """
         Generate synthetic asset returns using a multi-factor model.
@@ -189,7 +188,7 @@ class MarketDataGenerator:
         prices : pd.DataFrame
             Simulated price series for all assets.
         returns : pd.DataFrame
-            Daily log returns.
+            Daily log returns.  (we use log returns because log return unlike simple returns are continously compounded returns (additive returns across time) and are more normally distributed then simple returns).
         factors : pd.DataFrame
             Factor return series.
         """
@@ -198,7 +197,7 @@ class MarketDataGenerator:
         dates = factors.index
 
         # Factor loadings per asset
-        betas = {}
+        betas = {}     #beta measures the portfolio's volatility relative to the market
         for ticker, (name, sector, ann_ret, ann_vol, mkt_beta) in self.ASSET_UNIVERSE.items():
             hml_beta = self.rng.uniform(-0.3, 0.5)
             mom_beta = self.rng.uniform(-0.2, 0.4)
@@ -248,6 +247,8 @@ class MarketDataGenerator:
         Generate a market-cap-weighted benchmark from asset returns.
 
         Uses approximate market cap weights (tech-heavy, like S&P 500).
+
+        critical for managing a multi-asset portfolio
         """
         weights = {
             'AAPL': 0.15, 'MSFT': 0.14, 'AMZN': 0.08, 'JPM': 0.06,
@@ -265,8 +266,8 @@ class MarketDataGenerator:
         return {t: v[1] for t, v in self.ASSET_UNIVERSE.items()}
 
     def summary(self, returns: pd.DataFrame) -> pd.DataFrame:
-        """Compute summary statistics for generated data."""
-        ann_factor = 252
+        """Compute summary  statistics for generated data."""
+        ann_factor = 252  #there are 252 trading days in a single year
         stats_dict = {
             'Ann. Return (%)': returns.mean() * ann_factor * 100,
             'Ann. Volatility (%)': returns.std() * np.sqrt(ann_factor) * 100,
