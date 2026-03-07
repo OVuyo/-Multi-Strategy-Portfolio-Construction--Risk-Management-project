@@ -3,9 +3,7 @@
 MODULE 8: Performance Analytics & Visualization
 ================================================================================
 PURPOSE:
-    Generate institutional-quality performance reports and visualizations.
-    Creates a complete tear sheet comparable to what funds present to
-    investors and risk committees.
+    Generate quality performance reports and visualizations.
 
 OUTPUT:
     - Cumulative return charts
@@ -16,10 +14,7 @@ OUTPUT:
     - Risk decomposition
     - Strategy comparison dashboard
 
-INTERVIEW RELEVANCE:
-    - Presentation quality matters in quant roles
-    - Understanding what metrics investors/PMs care about
-    - Being able to create complete tear sheets from scratch
+
 ================================================================================
 """
 
