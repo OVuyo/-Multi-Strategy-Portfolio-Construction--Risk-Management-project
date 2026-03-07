@@ -24,11 +24,7 @@ THEORY:
     - Random Forest (non-linear, handles interactions)
     - Ensemble (average of both for robustness)
 
-INTERVIEW RELEVANCE:
-    - ML in finance is the hottest area in quant hiring
-    - Shows understanding of the unique challenges (low SNR, non-stationarity)
-    - Feature engineering is where domain expertise creates edge
-    - Walk-forward testing shows awareness of look-ahead bias
+
 ================================================================================
 """
 
