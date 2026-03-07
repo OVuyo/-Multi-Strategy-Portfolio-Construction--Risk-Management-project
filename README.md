@@ -5,7 +5,7 @@
 
 ### Problem Statement
 
-*"Design and implement an end-to-end quantitative research pipeline that constructs, optimizes, backtests, and risk-manages a multi-asset portfolio using 7 distinct optimization strategies — from classical Markowitz Mean-Variance to modern machine-learning-based Hierarchical Risk Parity — with institutional-quality risk analytics including parametric/historical/Monte Carlo VaR, CVaR, stress testing, factor risk decomposition, and regime-aware allocation."*
+*"Design and implement an end-to-end quantitative research pipeline that constructs, optimizes, backtests, and risk-manages a multi-asset portfolio using 7 distinct optimization strategies — from classical Markowitz Mean-Variance to modern machine-learning-based Hierarchical Risk Parity — with quality risk analytics including parametric/historical/Monte Carlo VaR, CVaR, stress testing, factor risk decomposition, and regime-aware allocation."*
 
 This project demonstrates the **complete workflow of a quantitative analyst** . It covers every stage from data analysis to portfolio construction to risk reporting.
 
