@@ -15,12 +15,7 @@ STRATEGIES IMPLEMENTED:
     4. Minimum CVaR Optimization — Rockafellar & Uryasev (2000)
     5. Hierarchical Risk Parity (HRP) — Lopez de Prado (2016)
 
-INTERVIEW RELEVANCE:
-    - Every quant interview covers portfolio optimization
-    - Understanding the weaknesses of MVO (estimation error, concentration)
-    - Black-Litterman is the industry standard for active management
-    - HRP/Risk Parity show modern ML-aware approaches
-    - CVaR optimization shows understanding of coherent risk measures
+
 ================================================================================
 """
 
