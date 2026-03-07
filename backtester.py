@@ -24,11 +24,6 @@ THEORY:
     - Turnover and transaction cost drag
     - Alpha and beta vs. benchmark
 
-INTERVIEW RELEVANCE:
-    - Backtesting is the primary tool for strategy evaluation
-    - Understanding look-ahead bias is critical (instant red flag if missed)
-    - Transaction cost modeling separates toy from real strategies
-    - Walk-forward > simple train/test split for time series
 ================================================================================
 """
 
