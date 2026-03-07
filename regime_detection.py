@@ -24,11 +24,6 @@ THEORY:
     - Rolling skewness (tail behavior)
     - Correlation regime (risk-on vs risk-off)
 
-INTERVIEW RELEVANCE:
-    - Regime detection is used at macro hedge funds (Bridgewater, etc.)
-    - Shows understanding of HMMs, a staple in quant finance
-    - Demonstrates ability to combine ML with domain knowledge
-    - Regime-switching models appear in derivatives pricing too
 ================================================================================
 """
 
