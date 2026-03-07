@@ -25,10 +25,7 @@ THEORY:
         - Information Ratio: alpha / tracking_error
         - Factor Risk Contribution: how much each factor drives portfolio risk
 
-INTERVIEW RELEVANCE:
-    - Factor models are THE core framework at most quant firms
-    - Understanding alpha vs. beta decomposition is essential
-    - Risk attribution is daily work for portfolio risk managers
+
 ================================================================================
 """
 
