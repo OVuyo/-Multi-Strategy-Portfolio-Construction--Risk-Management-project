@@ -14,7 +14,7 @@ Pipeline Steps:
     5. Portfolio Optimization → 7 strategies (MVO, BL, RP, CVaR, HRP, etc.)
     6. Walk-Forward Backtest → Rigorous out-of-sample evaluation
     7. Risk Analytics      → VaR, CVaR, stress testing, drawdowns
-    8. Performance Report  → Institutional-quality visualizations
+    8. Performance Report  → quality visualizations
 
 Run:
     python main.py
