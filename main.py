@@ -1,6 +1,6 @@
 """
 ================================================================================
-MAIN PIPELINE: Institutional-Grade Multi-Strategy Portfolio Engine
+MAIN PIPELINE:  Multi-Strategy Portfolio Engine
 ================================================================================
 
 This is the master orchestrator that connects all modules into a cohesive
@@ -53,11 +53,11 @@ def main():
 
     print(r"""
     ╔══════════════════════════════════════════════════════════════════╗
-    ║   INSTITUTIONAL-GRADE MULTI-STRATEGY PORTFOLIO ENGINE          ║
+    ║   MULTI-STRATEGY PORTFOLIO ENGINE                               ║
     ║   ─────────────────────────────────────────────────────────     ║
-    ║   A Complete Quantitative Research Pipeline                    ║
-    ║   Modules: Data | Factors | Regimes | ML | Optimization |     ║
-    ║            Backtesting | Risk | Analytics                      ║
+    ║   A Complete Quantitative Research Pipeline                     ║
+    ║   Modules: Data | Factors | Regimes | ML | Optimization |       ║
+    ║            Backtesting | Risk | Analytics                       ║
     ╚══════════════════════════════════════════════════════════════════╝
     """)
 
