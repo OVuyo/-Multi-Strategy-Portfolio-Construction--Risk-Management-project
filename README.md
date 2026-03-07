@@ -12,7 +12,7 @@ This project demonstrates the **complete workflow of a quantitative analyst** . 
 ## PROJECT ARCHITECTURE
 
 ```
-quant_project/
+Multi-Strategy-Portfolio-Construction--Risk-Management-project/
 ├── main.py                    # Master orchestrator pipeline
 ├── data_generator.py          # Module 1: Synthetic data with factor structure
 ├── factor_model.py            # Module 2: Fama-French factor decomposition
@@ -224,7 +224,8 @@ risk_scaling = {Bull': 1.0, 'Bear': 0.7, 'Crisis': 0.4}
 7. Correlation Heatmap
 
 ---
-
+# THE TEST RUN ANALYSIS 
+---
 ## KEY RESULTS
 
 ### Strategy Performance (Walk-Forward Backtest)
@@ -242,12 +243,26 @@ risk_scaling = {Bull': 1.0, 'Bear': 0.7, 'Crisis': 0.4}
 - **Min CVaR** produced the highest Sharpe ratio (0.604) with the tightest max drawdown
 - **HRP** performed well without requiring covariance matrix inversion
 - **Equal Weight** underperformed — naive diversification is insufficient
-- Regime detection identified 3 distinct states with meaningfully different characteristics
+- **Regime detection** identified 3 distinct states with meaningfully different characteristics
 
 ---
+## Figures of the test run
 
+<p align="center">
+  <img src="output/01_strategy_comparison.png" width="30%" />
+  <img src="output/02_efficient_frontier.png" width="30%" />
+  <img src="output/03_risk_decomposition.png" width="30%" />
+</p>
 
+<p align="center">
+  <img src="output/04_weight_allocations.png" width="24%" />
+  <img src="output/05_regime_analysis.png" width="24%" />
+  <img src="output/06_stress_test.png" width="24%" />
+  <img src="output/07_correlation_matrix.png" width="24%" />
+</p>
+---
 
+---
 
 ## HOW TO RUN
 
