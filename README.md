@@ -104,7 +104,6 @@ CVaR is a *coherent* risk measure (satisfies subadditivity), unlike VaR.
 ```
 MCTR_i = (Sigma @ w)_i / sigma_p
 RC_i = w_i * MCTR_i
-
 ```
 ---
 
