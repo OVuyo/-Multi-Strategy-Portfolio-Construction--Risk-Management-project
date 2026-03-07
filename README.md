@@ -1,4 +1,4 @@
-# Institutional-Grade Multi-Strategy Portfolio Construction & Risk Management Engine project
+# Multi-Strategy Portfolio Construction & Risk Management Engine project
 
 
 ## PROJECT OVERVIEW
